@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: postgres:13.16-bookworm
+    environment:
+      POSTGRES_DB: "bd"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "pwd"
+    ports:
+      - "5435:5432"
