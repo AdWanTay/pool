@@ -129,7 +129,8 @@ public class RecordService {
     }
 
     public ResponseEntity<?> getByName(String name) {
-        Optional<List<Record>> records = recordRepository.findAllByClientName(name);
+        System.out.println(recordRepository.findAllByClientName(name));
+        Optional<List<ReservationByNameRequest>> records = recordRepository.findAllByClientName(name);
         if (records.isPresent() && !records.get().isEmpty())
             return ResponseEntity.ok(records.get());
         else
